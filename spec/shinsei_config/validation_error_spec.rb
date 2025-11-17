@@ -8,11 +8,7 @@ RSpec.describe ShinseiConfig::ValidationError do
 
     context 'when errors are present' do
       let(:errors) do
-        double(
-          'Errors',
-          empty?: false,
-          to_h: { api_keys: ['is missing'], write_account_stats: ['must be boolean'] }
-        )
+        { api_keys: ['is missing'], write_account_stats: ['must be boolean'] }
       end
 
       it 'includes validation failed header' do

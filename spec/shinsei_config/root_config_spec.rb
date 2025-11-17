@@ -6,7 +6,6 @@ RSpec.describe ShinseiConfig::RootConfig do
 
   after do
     FileUtils.rm_rf(tmpdir)
-    Object.send(:remove_const, :TestConfig) if defined?(TestConfig)
   end
 
   describe '.load!' do

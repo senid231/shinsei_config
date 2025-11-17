@@ -7,8 +7,8 @@ module ShinseiConfig
   class SchemaValidator
     attr_reader :schema
 
-    def initialize(**options, &block)
-      @schema = Dry::Schema.define(processor_type: Dry::Schema::JSON, **options, &block)
+    def initialize(**, &)
+      @schema = Dry::Schema.define(processor_type: Dry::Schema::JSON, **, &)
     end
 
     def validate!(config_hash)
