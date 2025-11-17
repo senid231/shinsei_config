@@ -1,5 +1,9 @@
 # ShinseiConfig
 
+[![Gem Version](https://badge.fury.io/rb/shinsei_config.svg)](https://rubygems.org/gems/shinsei_config)
+[![CI](https://github.com/senid231/shinsei_config/actions/workflows/main.yml/badge.svg)](https://github.com/senid231/shinsei_config/actions/workflows/main.yml)
+[![CodeQL](https://github.com/senid231/shinsei_config/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/senid231/shinsei_config/actions/workflows/github-code-scanning/codeql)
+
 Shinsei (真正 — "genuine, correct, authentic")
 
 A Ruby gem for loading configuration from YAML files with schema validation, ERB interpolation, and environment-specific settings.
