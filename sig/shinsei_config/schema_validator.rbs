@@ -1,0 +1,17 @@
+# Generated from lib/shinsei_config/schema_validator.rb with RBS::Inline
+
+module ShinseiConfig
+  # Wraps dry-schema for validating configuration
+  class SchemaValidator
+    @schema: Dry::Schema::Processor
+
+    # @rbs attr_reader schema: Dry::Schema::Processor
+    attr_reader schema: untyped
+
+    # @rbs **opts: untyped -- return: void
+    def initialize: (**untyped) ?{ (?) -> untyped } -> untyped
+
+    # @rbs config_hash: Hash[untyped, untyped] -- return: void
+    def validate!: (Hash[untyped, untyped] config_hash) -> untyped
+  end
+end

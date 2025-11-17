@@ -1,4 +1,6 @@
+# Generated from lib/shinsei_config.rb with RBS::Inline
+
 module ShinseiConfig
-  VERSION: String
-  # See the writing guide of rbs: https://github.com/ruby/rbs#guides
+  class Error < StandardError
+  end
 end

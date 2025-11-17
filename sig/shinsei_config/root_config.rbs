@@ -1,0 +1,42 @@
+# Generated from lib/shinsei_config/root_config.rb with RBS::Inline
+
+module ShinseiConfig
+  # Base class for configuration. Users inherit from this class.
+  class RootConfig
+    @settings: Settings?
+
+    @schema_validator: SchemaValidator?
+
+    @config: Data?
+
+    # Configure settings for this config class
+    # @rbs () { (Settings) -> void } -> Settings
+    def self.settings: () { (Settings) -> void } -> Settings
+
+    # Define validation schema
+    # @rbs () { () -> void } -> SchemaValidator?
+    def self.schema: () { () -> void } -> SchemaValidator?
+
+    # Load and validate configuration
+    # @rbs return: singleton(RootConfig)
+    def self.load!: () -> singleton(RootConfig)
+
+    # Reload configuration
+    # @rbs return: singleton(RootConfig)
+    def self.reload!: () -> singleton(RootConfig)
+
+    # Access config instance
+    # @rbs return: Data
+    def self.config: () -> Data
+
+    # Delegate method calls to config instance
+    # @rbs method_name: Symbol, *args: untyped, **kwargs: untyped -- return: untyped
+    def self.method_missing: (Symbol method_name, *untyped) ?{ (?) -> untyped } -> untyped
+
+    # @rbs method_name: Symbol, include_private: bool -- return: bool
+    def self.respond_to_missing?: (Symbol method_name, ?untyped include_private) -> untyped
+
+    # @rbs return: void
+    private def self.validate_setup!: () -> void
+  end
+end

@@ -1,0 +1,25 @@
+# Generated from lib/shinsei_config/config_builder.rb with RBS::Inline
+
+module ShinseiConfig
+  # Recursively builds Data.define objects from hash with deep freezing
+  class ConfigBuilder
+    # @rbs hash: Hash[untyped, untyped] -- return: Data
+    def self.build: (Hash[untyped, untyped] hash) -> untyped
+
+    @hash: Hash[untyped, untyped]
+
+    # @rbs attr_reader hash: Hash[untyped, untyped]
+    attr_reader hash: untyped
+
+    # @rbs hash: Hash[untyped, untyped] -- return: void
+    def initialize: (Hash[untyped, untyped] hash) -> untyped
+
+    # @rbs return: Data
+    def build: () -> Data
+
+    private
+
+    # @rbs value: untyped -- return: untyped
+    def build_value: (untyped value) -> untyped
+  end
+end

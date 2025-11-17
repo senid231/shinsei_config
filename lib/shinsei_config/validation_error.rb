@@ -3,8 +3,12 @@
 module ShinseiConfig
   # Raised when config validation fails
   class ValidationError < Error
+    # @rbs @errors: Hash[Symbol, Array[String]]
+
+    # @rbs attr_reader errors: Hash[Symbol, Array[String]]
     attr_reader :errors
 
+    # @rbs errors: Hash[Symbol, Array[String]] -- return: void
     def initialize(errors)
       @errors = errors
       super(format_errors)
@@ -12,6 +16,7 @@ module ShinseiConfig
 
     private
 
+    # @rbs return: String
     def format_errors
       return 'Validation failed' if errors.empty?
 

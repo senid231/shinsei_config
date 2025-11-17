@@ -1,0 +1,19 @@
+# Generated from lib/shinsei_config/validation_error.rb with RBS::Inline
+
+module ShinseiConfig
+  # Raised when config validation fails
+  class ValidationError < Error
+    @errors: Hash[Symbol, Array[String]]
+
+    # @rbs attr_reader errors: Hash[Symbol, Array[String]]
+    attr_reader errors: untyped
+
+    # @rbs errors: Hash[Symbol, Array[String]] -- return: void
+    def initialize: (Hash[Symbol, Array[String]] errors) -> untyped
+
+    private
+
+    # @rbs return: String
+    def format_errors: () -> String
+  end
+end

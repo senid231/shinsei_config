@@ -3,16 +3,22 @@
 module ShinseiConfig
   # Recursively builds Data.define objects from hash with deep freezing
   class ConfigBuilder
+    # @rbs hash: Hash[untyped, untyped] -- return: Data
     def self.build(hash)
       new(hash).build
     end
 
+    # @rbs @hash: Hash[untyped, untyped]
+
+    # @rbs attr_reader hash: Hash[untyped, untyped]
     attr_reader :hash
 
+    # @rbs hash: Hash[untyped, untyped] -- return: void
     def initialize(hash)
       @hash = hash
     end
 
+    # @rbs return: Data
     def build
       raise Error, "Expected Hash, got #{hash.class}" unless hash.is_a?(Hash)
 
@@ -29,6 +35,7 @@ module ShinseiConfig
 
     private
 
+    # @rbs value: untyped -- return: untyped
     def build_value(value)
       case value
       when Hash

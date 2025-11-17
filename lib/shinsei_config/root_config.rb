@@ -4,7 +4,12 @@ module ShinseiConfig
   # Base class for configuration. Users inherit from this class.
   class RootConfig
     class << self
+      # @rbs @settings: Settings?
+      # @rbs @schema_validator: SchemaValidator?
+      # @rbs @config: Data?
+
       # Configure settings for this config class
+      # @rbs () { (Settings) -> void } -> Settings
       def settings(&block)
         @settings ||= Settings.new
         block&.call(@settings)
@@ -12,12 +17,14 @@ module ShinseiConfig
       end
 
       # Define validation schema
+      # @rbs () { () -> void } -> SchemaValidator?
       def schema(&block)
         @schema_validator = SchemaValidator.new(&block) if block
         @schema_validator
       end
 
       # Load and validate configuration
+      # @rbs return: singleton(RootConfig)
       def load!
         validate_setup!
 
@@ -39,12 +46,14 @@ module ShinseiConfig
       end
 
       # Reload configuration
+      # @rbs return: singleton(RootConfig)
       def reload!
         @config = nil
         load!
       end
 
       # Access config instance
+      # @rbs return: Data
       def config
         raise Error, "Config not loaded. Call #{name}.load! first" unless @config
 
@@ -52,6 +61,7 @@ module ShinseiConfig
       end
 
       # Delegate method calls to config instance
+      # @rbs method_name: Symbol, *args: untyped, **kwargs: untyped -- return: untyped
       def method_missing(method_name, *, &)
         if config.respond_to?(method_name)
           config.public_send(method_name, *, &)
@@ -60,12 +70,14 @@ module ShinseiConfig
         end
       end
 
+      # @rbs method_name: Symbol, include_private: bool -- return: bool
       def respond_to_missing?(method_name, include_private = false)
         config.respond_to?(method_name) || super
       end
 
       private
 
+      # @rbs return: void
       def validate_setup!
         settings.validate!
 

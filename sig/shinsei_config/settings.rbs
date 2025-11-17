@@ -1,0 +1,33 @@
+# Generated from lib/shinsei_config/settings.rb with RBS::Inline
+
+module ShinseiConfig
+  # Stores settings for RootConfig that are not part of the schema
+  class Settings
+    @config_path: String?
+
+    @env: String?
+
+    @yaml_opts: Hash[Symbol, untyped]
+
+    # @rbs attr_accessor config_path: String?
+    # @rbs attr_accessor env: String?
+    # @rbs attr_accessor yaml_opts: Hash[Symbol, untyped]
+    attr_accessor config_path: untyped
+
+    # @rbs attr_accessor config_path: String?
+    # @rbs attr_accessor env: String?
+    # @rbs attr_accessor yaml_opts: Hash[Symbol, untyped]
+    attr_accessor env: untyped
+
+    # @rbs attr_accessor config_path: String?
+    # @rbs attr_accessor env: String?
+    # @rbs attr_accessor yaml_opts: Hash[Symbol, untyped]
+    attr_accessor yaml_opts: untyped
+
+    # @rbs return: void
+    def initialize: () -> void
+
+    # @rbs return: void
+    def validate!: () -> void
+  end
+end
